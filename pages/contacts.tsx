@@ -5,11 +5,12 @@ import Link from 'next/link'
 import MainLayout from '../components/layouts/MainLayout';
 
 
-export default function HomePage() {
+
+export default function Contacts() {
   return (
     <>
-     <MainLayout>
-     <h1>Home Page</h1>
+    <MainLayout>
+    <h1>Contacts Page</h1>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -33,10 +34,10 @@ export default function HomePage() {
             </a>
           </div>
 
-        <h1>Go About</h1>
-          <Link href="/about">About</Link>
+        <h1>Go Home</h1>
+          <Link href="/">Contacts</Link>
         </div>
-     </MainLayout>
+    </MainLayout>
     </>
   )
 }

@@ -3,13 +3,17 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import MainLayout from '../components/layouts/MainLayout';
+import DarkLayouts from '../components/layouts/DarkLayouts';
 
+import { NextPageWithLayout } from './_app'
+import { ReactElement } from 'react'
 
-export default function HomePage() {
+// const  About: NextPageWithLayout = () => {
+  const About: NextPageWithLayout = () => {
   return (
-    <>
-     <MainLayout>
-     <h1>Home Page</h1>
+  <>
+
+        <h1>About Page</h1>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -33,10 +37,21 @@ export default function HomePage() {
             </a>
           </div>
 
-        <h1>Go About</h1>
-          <Link href="/about">About</Link>
+        <h1>Go Home</h1>
+          <Link href="/">Home</Link>
         </div>
-     </MainLayout>
-    </>
+  </>
   )
 }
+
+About.getLayout = function getLayout(children: React.ReactNode) {
+  return (
+   
+      <MainLayout>
+        <DarkLayouts>{children}</DarkLayouts>
+      </MainLayout>
+    
+  )
+}
+
+export default About;
